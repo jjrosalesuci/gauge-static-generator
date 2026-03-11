@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Gauges</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Generador de Gauges ✨</h1>
+            <p>Crea medidores interactivos con valores actuales y futuros</p>
+        </header>
+
+        <main class="dashboard">
+            <section class="controls-section">
+                <div class="card">
+                    <h2>Parámetros</h2>
+
+                    <div class="control-group" style="display: none;">
+                        <input type="hidden" id="gauge-style" value="semi">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gauge-value">Valor Actual (%)</label>
+                        <div class="range-wrapper">
+                            <input type="range" id="gauge-value" min="0" max="100" value="75">
+                            <span id="value-display" class="value-badge">75%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gauge-future">Valor Futuro (%)</label>
+                        <div class="range-wrapper">
+                            <input type="range" id="gauge-future" min="0" max="100" value="100">
+                            <span id="future-display" class="value-badge">100%</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gauge-color">Color Actual</label>
+                        <input type="color" id="gauge-color" value="#facc15">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gauge-future-color">Color Futuro</label>
+                        <input type="color" id="gauge-future-color" value="#4ade80">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="gauge-thickness">Grosor de la línea</label>
+                        <div class="range-wrapper">
+                            <input type="range" id="gauge-thickness" min="1" max="10" value="4" step="0.5">
+                            <span id="thickness-display" class="value-badge">4</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="preview-section">
+                <div class="card preview-card light-bg">
+                    <h2 class="dark-text">Vista Previa</h2>
+                    <div class="gauge-container" id="gauge-container">
+                        <!-- El gauge se inyectará aquí vía JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
